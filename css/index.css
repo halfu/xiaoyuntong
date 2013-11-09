@@ -1,0 +1,22 @@
+.back_body
+{
+	background-image:url(../image/bg.jpg);
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+}
+.form_relate
+{
+	position:absolute;
+	width:240px;
+	top:36%;
+	left:10%;
+}
+.my_input_css
+{
+	padding-top:20px;
+	
+}
+.my_color
+{
+	color:#fff;
+}
