@@ -20,3 +20,47 @@
 {
 	color:#fff;
 }
+
+.user_type {
+	width: 234px;
+	height: 36px;
+	border-radius: 18px;
+	background: rgba(128,128,128,0.7);
+}
+.left {
+	float: left;
+	margin-left: 16px;
+	line-height: 36px;
+	width: 100px;
+	text-align: center;
+	cursor: pointer;
+}
+.f16 {
+font-size: 16px;
+}
+.font {
+font-family: 微软雅黑;
+}
+.fc1 {
+color: rgba(255,255,255,0.6);
+}
+.user_type span {
+z-index: 2;
+position: relative;
+}
+.right {
+float: right;
+margin-right: 16px;
+line-height: 36px;
+width: 100px;
+text-align: center;
+cursor: pointer;
+}
+.green {
+width: 132px;
+height: 36px;
+border-radius: 18px;
+background: #62A618;
+position: absolute;
+z-index: 1;
+}

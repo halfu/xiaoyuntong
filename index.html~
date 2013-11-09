@@ -18,7 +18,7 @@
 			<li class="active">i</li>
 		</header>
 		-->	
-	 <div class="form_relate  panel panel-warning">
+	 <div class="form_relate  ">
 
 		<div class="btn-toolbar" role="toolbar">
 			<div class="btn-group btn-lg">
@@ -29,7 +29,11 @@
 				<button type="button" id="my_seal_form" class="btn btn-primary btn-lg " />买主</button>
 			</div>
 		</div>
-
+		<div class="user_type">
+			<span class="font left f16 fc1" style="color: white;">用户</span>
+			<span class="font right f16 fc1">店主</span>
+			<div class="green"></div>
+		</div>
 		<div class="input-group my_input_css">
 			<span class="input-group-addon" id="user_title">帐号</span>
 			<input type="text" class="form-control" placeholder="请输入你的帐号:" id="user_email">

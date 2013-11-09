@@ -5,14 +5,48 @@
   readys = function() {
     var form_type;
     form_type = 1;
+
+
+	$('.right').click(function() {
+		$('.left').css("color", "rgba(255,255,255,0.6)");
+		$(".green").animate({
+			left: '102px',
+		});
+		$('.right').css("color", "white");
+	});
+	$('.left').click(function() {
+		$('.right').css("color", "rgba(255,255,255,0.6)");
+		$(".green").animate({
+			left: '0px',
+		});
+		$('.left').css("color", "white");
+	});
+
+
+
+
     $('#my_user_form').click(function() {
-      return form_type = 1;
+      form_type = 1;
+      if ($(this).hasClass('btn-warning') != null) {
+        $('#my_seal_form').removeClass('btn-warning');
+        $('#my_seal_form').addClass('btn-primary');
+        $(this).removeClass('btn-primary');
+        return $(this).addClass('btn-warning');
+      }
     });
     $('#my_seal_form').click(function() {
-      return form_type = 2;
+      form_type = 2;
+      if ($(this).hasClass('btn-warning') != null) {
+        $('#my_user_form').removeClass('btn-warning');
+        $('#my_user_form').addClass('btn-primary');
+        $(this).removeClass('btn-primary');
+        $(this).removeClass('btn-primary');
+        return $(this).addClass('btn-warning');
+      }
     });
     $("#my_register").click(function() {
-      console.log("register_test");
+      $("div.modal-body").empty();
+      $("div.modal-footer").empty();
       $("div.modal-body").append(reg_mid_str);
       $("div.modal-footer").append(reg_end_str);
       $("#reg_submit").click(register);
@@ -57,9 +91,7 @@
           $('#user_title').css({
             'color': 'red'
           });
-          $('#user_email').attr({
-            'value': ""
-          });
+          $('#user_email').val("");
           return $('#user_email').attr({
             'placeholder': "邮箱不存在"
           });
@@ -67,9 +99,7 @@
           $('#pwd_title').css({
             "color": "red"
           });
-          $('#user_pwd').attr({
-            'value': ""
-          });
+          $('#user_pwd').val("");
           return $('#user_pwd').attr({
             "placeholder": '密码错误'
           });
@@ -84,12 +114,18 @@
 
   reg_mid_str = '<div class="input-group my_input_css"> <span class="input-group-addon" id="reg_email_ti">Email</span> <input type="text" class="form-control" placeholder="请输入你的Email:" id="reg_email"> </div> <div class="input-group my_input_css"> <span class="input-group-addon" id="reg_pwd_ti">密码&nbsp;&nbsp;</span> <input type="text" class="form-control" id="reg_pwd" placeholder="请输入你的密码:"> </div> <div class="input-group my_input_css"> <span class="input-group-addon" id="reg_pwd_two_ti">确认密码</span> <input type="text" class="form-control" id="reg_pwd_two" placeholder="请输入你的确认密码:"> </div>';
 
-  reg_end_str = '<button type="button" class="btn btn-default" data-dismiss="modal" id="reg_re_construct">重置</button> <button type="button" class="btn btn-primary" id="reg_submit">提交</button>';
+  reg_end_str = '<button type="button" class="btn btn-default"  id="reg_re_construct">重置</button> <button type="button" class="btn btn-primary" id="reg_submit">提交</button>';
 
   register = function() {
     var password, pwd_again, register_mes;
     password = hex_md5($("#reg_pwd").val());
     pwd_again = hex_md5($("#reg_pwd_two").val());
+    $("#reg_pwd_ti").css({
+      "color": "#555"
+    });
+    $("#reg_pwd_two_ti").css({
+      "color": "#555"
+    });
     if (password !== pwd_again) {
       $("#reg_pwd_ti").css({
         "color": "red"
@@ -97,12 +133,8 @@
       $("#reg_pwd_two_ti").css({
         "color": "red"
       });
-      $("#reg_pwd").attr({
-        "value": ""
-      });
-      $("#reg_pwd_two").attr({
-        "value": ""
-      });
+      $("#reg_pwd").val('');
+      $("#reg_pwd_two").val('');
       $("#reg_pwd").attr({
         "placeholder": "两次输入不一致"
       });
@@ -137,14 +169,14 @@
       return alert('服务器请求超时');
     } else {
       if (data.status) {
-        return window.open();
+        $("div.modal-body").empty();
+        $("div.modal-footer").empty();
+        return $("div.modal-body").append("<h2>恭喜您注册成功</h1>");
       } else if (data.type === 1004) {
         $("#reg_email_ti").css({
           "color": "red"
         });
-        $("#reg_email").attr({
-          "value": ""
-        });
+        $("#reg_email").val("");
         return $("#reg_email").attr({
           "placeholder": "该邮箱已经被注册"
         });
@@ -155,23 +187,27 @@
   };
 
   re_construct = function() {
+    $("#reg_pwd_ti").css({
+      "color": "#555"
+    });
+    $("#reg_pwd_two_ti").css({
+      "color": "#555"
+    });
+    $("#reg_email_ti").css({
+      "color": "#555"
+    });
+    console.log('text');
+    $("#reg_pwd").val("");
     $("#reg_pwd").attr({
-      "value": ""
+      "placeholder": "请输入你的密码"
     });
-    $("#reg_pwd").attr({
-      "value": "请输入你的密码"
-    });
+    $("#reg_email").val('');
     $("#reg_email").attr({
-      "value": ""
+      "placeholder": "请输入你的Email"
     });
-    $("#reg_email").attr({
-      "value": "请输入你的Email"
-    });
-    $("#reg_pwd_two").attr({
-      "value": ""
-    });
+    $("#reg_pwd_two").val("");
     return $("#reg_pwd_two").attr({
-      "value": "请输入你的确认密码"
+      "placeholder": "请输入你的确认密码"
     });
   };
 

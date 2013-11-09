@@ -5,25 +5,47 @@
   readys = function() {
     var form_type;
     form_type = 1;
-    $('#my_user_form').click(function() {
-      form_type = 1;
-      if ($(this).hasClass('btn-warning') != null) {
-        $('#my_seal_form').removeClass('btn-warning');
-        $('#my_seal_form').addClass('btn-primary');
-        $(this).removeClass('btn-primary');
-        return $(this).addClass('btn-warning');
-      }
-    });
-    $('#my_seal_form').click(function() {
-      form_type = 2;
-      if ($(this).hasClass('btn-warning') != null) {
-        $('#my_user_form').removeClass('btn-warning');
-        $('#my_user_form').addClass('btn-primary');
-        $(this).removeClass('btn-primary');
-        $(this).removeClass('btn-primary');
-        return $(this).addClass('btn-warning');
-      }
-    });
+
+
+	$('.right').click(function() {
+		form_type=2;
+		$('.left').css("color", "rgba(255,255,255,0.6)");
+		$(".green").animate({
+			left: '102px',
+		});
+		$('.right').css("color", "white");
+	});
+	$('.left').click(function() {
+		form_type=1;
+		$('.right').css("color", "rgba(255,255,255,0.6)");
+		$(".green").animate({
+			left: '0px',
+		});
+		$('.left').css("color", "white");
+	});
+
+
+
+
+//    $('#my_user_form').click(function() {
+//      form_type = 1;
+//      if ($(this).hasClass('btn-warning') != null) {
+//        $('#my_seal_form').removeClass('btn-warning');
+//        $('#my_seal_form').addClass('btn-primary');
+//        $(this).removeClass('btn-primary');
+//        return $(this).addClass('btn-warning');
+//      }
+//    });
+//    $('#my_seal_form').click(function() {
+//      form_type = 2;
+//      if ($(this).hasClass('btn-warning') != null) {
+//        $('#my_user_form').removeClass('btn-warning');
+//        $('#my_user_form').addClass('btn-primary');
+//        $(this).removeClass('btn-primary');
+//        $(this).removeClass('btn-primary');
+//        return $(this).addClass('btn-warning');
+//      }
+//    });
     $("#my_register").click(function() {
       $("div.modal-body").empty();
       $("div.modal-footer").empty();
