@@ -1,0 +1,23 @@
+﻿.nav {
+background-color: #224888;
+width: 100%;
+height: 80px;
+}
+.nav_content {
+width: 1024px;
+height: 80px;
+position: relative;
+}
+.fs72 {
+font-size: 72px;
+}
+.white {
+color: white;
+}
+.logo {
+position: relative;
+float: left;
+font-family: 华文隶书;
+top: 5px;
+cursor: default;
+}

@@ -1,0 +1,152 @@
+﻿html,body,div,p,a,ul,li,input{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html,body{
+	width: 100%;
+	font-size: 100%;
+
+}
+
+div{
+	margin: 0 auto;
+}
+
+ul{
+	list-style-type: none;
+}
+
+a{
+	text-decoration: none;
+	outline: none;
+}
+
+input{
+	font-family: 微软雅黑;
+	outline: none;
+}
+
+.bg{
+	background-color: #F1F1F1;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.nav{
+	background-color: #224888;
+	width: 100%;
+	height: 80px;
+
+}
+
+.logo{
+	position: relative;
+	float: left;
+	font-family: 华文隶书;
+	top:5px;
+	cursor: default;
+}
+
+.white{
+	color: white;
+}
+
+.font{
+	font-family: '微软雅黑';
+}
+
+.fs72{
+	font-size: 72px;
+}
+
+.fs24{
+	font-size: 24px;
+	font-family:'微软雅黑','黑体';
+}
+
+.option ul li a{
+	display: inline-block;
+	height: 80px;
+	float: left;
+	margin: 0 40px;
+	padding: 0 15px;
+	color: #B4C9DE;
+}
+
+
+
+
+.option{
+	width: 450px;
+	line-height: 80px;
+	height: 80px;
+}
+
+.option ul li a:hover{
+	background-color: #1E417B;
+	color: white;
+}
+
+.nav_flag{
+
+	width: 154px;
+	height: 0px;
+
+}
+.nav_flag a{
+	display: inline-block;
+	width: 154px;
+	height: 155px;
+	background:url("/Content/Image/navflag.png") no-repeat;
+	position: absolute;
+right: 0;
+top:-32px;
+
+z-index: 100;
+}
+
+.nav_content{
+	width: 1024px;
+	height: 80px;
+	position: relative;
+}
+
+
+
+.option{
+	width: 450px;
+	line-height: 80px;
+	height: 80px;
+}
+
+.option ul li a:hover{
+	background-color: #1E417B;
+	color: white;
+}
+
+.nav_flag{
+
+	width: 154px;
+	height: 0px;
+
+}
+.nav_flag a{
+	display: inline-block;
+	width: 154px;
+	height: 155px;
+	background:url("/Content/Image/navflag.png") no-repeat;
+	position: absolute;
+right: 0;
+top:-32px;
+
+z-index: 100;
+}
+
+.nav_content{
+	width: 1024px;
+	height: 80px;
+	position: relative;
+}

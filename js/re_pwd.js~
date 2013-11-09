@@ -1,0 +1,11 @@
+$(document).ready(function () {
+	$('#nav_flag').mouseenter(function () { 
+		$("#nav_flag").animate({   
+  			top: '0'         }); 
+	});   
+  	$('#nav_flag').mouseleave(function () {     
+		$("#nav_flag").animate({ 
+			top: '-32px'    
+   		}, "fast"); 
+	});
+});
